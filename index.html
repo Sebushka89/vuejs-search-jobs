@@ -16,7 +16,7 @@
                                     
             <li  v-for='(job,index) in jobs' >
                 <div>Nome azienda: {{job.company}}</div>
-                <div>Psozione offerta: {{job.postion}}</div>
+                <div>Posizione offerta: {{job.position}}</div>
                 <div>Descrizione lavoro: {{job.description}}</div>
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>
@@ -38,7 +38,7 @@
             <li  v-for='(job,index) in jobs' v-if="starred.includes(index+1)">
                 <div class="important">
                 <div>Nome azienda: {{job.company}}</div>
-                <div>Psozione offerta: {{job.postion}}</div>
+                <div>Posizione offerta: {{job.position}}</div>
                 <div>Descrizione lavoro: {{job.description}}</div>
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>
@@ -54,7 +54,7 @@
             <li  v-for='(job,index) in jobs' v-if="applied.includes(index+1)">
                 <div class="important">
                 <div>Nome azienda: {{job.company}}</div>
-                <div>Psozione offerta: {{job.postion}}</div>
+                <div>Posizione offerta: {{job.position}}</div>
                 <div>Descrizione lavoro: {{job.description}}</div>
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>
