@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <h1>All Job</h1>
-        <ul class="jobs">
+        <ul class="jobs-1">
                                     
             <li  v-for='(job,index) in jobs' >
                 <div>Nome azienda: {{job.company}}</div>
@@ -21,7 +21,7 @@
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>
                 <div>Luogo: {{job.city}}</div>
-                <div>Tipologia contratto offerto: {{job.contract}}</div>
+                <div>Tipologia di contratto offerto: {{job.contract}}</div>
                 <i :class='favJob(index)' @click="addFav(index)"></i>
                 <button class="first-button" v-if="applied.includes(index + 1)" @click="applyJob(index)">Applied</button>
                 <button class="second-button" v-else @click="applyJob(index)" >Apply Now</button>
@@ -33,7 +33,7 @@
         </ul>
 
         <h1>My Favorite</h1>
-        <ul class="jobs">
+        <ul class="jobs-2">
                                     
             <li  v-for='(job,index) in jobs' v-if="starred.includes(index+1)">
                 <div class="important">
@@ -43,13 +43,13 @@
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>
                 <div>Luogo: {{job.city}}</div>
-                <div>Tipologia contratto offerto: {{job.contract}}</div>
+                <div>Tipologia di contratto offerto: {{job.contract}}</div>
             </li>
     
         </ul>
 
         <h1>My apply</h1>
-        <ul class="jobs">
+        <ul class="jobs-3">
                                     
             <li  v-for='(job,index) in jobs' v-if="applied.includes(index+1)">
                 <div class="important">
@@ -59,7 +59,7 @@
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>
                 <div>Luogo: {{job.city}}</div>
-                <div>Tipologia contratto offerto: {{job.contract}}</div>
+                <div>Tipologia di contratto offerto: {{job.contract}}</div>
             </li>
     
         </ul>
