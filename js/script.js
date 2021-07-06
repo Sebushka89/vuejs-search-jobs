@@ -87,6 +87,7 @@ var app = new Vue (
             ],
             starred: [1, 2, 3],
             applied: [4, 5],
+            openModal: false,
         },
          //se clicco sul cuore vuoto aggiungo alla lista preferiti
         methods:{
@@ -112,6 +113,15 @@ var app = new Vue (
                 if(!this.applied.includes(index+1)) {
                     this.applied.push(index+1);
                     this.starred.splice(index, 1); 
+                
+                setTimeout( () => {
+                    if (this.openModal === false) {
+                        this.openModal = true;
+                    }
+                }, 1000);
+                setTimeout(() => {
+                    this.openModal = false;
+                }, 2000);
                 }
             },
         }

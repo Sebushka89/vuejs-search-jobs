@@ -24,6 +24,9 @@
                 <i :class='favJob(index)' @click="addFav(index)"></i>
                 <button class="first-button" v-if="applied.includes(index + 1)" @click="applyJob(index)">Applied</button>
                 <button class="second-button" v-else @click="applyJob(index)" >Apply Now</button>
+                <div v-if="openModal" class="message">
+                    <div>Candidatura Inviata</div>
+                </div>
             </li>
     
         </ul>
