@@ -86,7 +86,7 @@ var app = new Vue (
 
             ],
             starred: [1, 2, 3],
-            applied: [4, 5]
+            applied: [4, 5],
         },
          //se clicco sul cuore vuoto aggiungo alla lista preferiti
         methods:{
@@ -104,13 +104,14 @@ var app = new Vue (
                 if(!this.starred.includes(index +1)){
                     this.starred.push(index +1)
                     return "fas fa-star"
-                }else{
-                    this.starred.splice(index, 1)
-                }    
+                }
             },
             applyJob: function (index){
-               
-           }
+                this.applied.push(index+1);
+                if (this.starred.includes(index+1)){
+                    this.starred.splice(index, 1)
+                }
+            },
         }
     }
 )            
