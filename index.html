@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="app">
+        <h1>All Job</h1>
         <ul class="jobs">
                                     
             <li  v-for='(job,index) in jobs' >
@@ -30,6 +31,46 @@
             </li>
     
         </ul>
+
+        <h1>My Favorite</h1>
+        <ul class="jobs">
+                                    
+            <li  v-for='(job,index) in jobs' v-if="starred.includes(index+1)">
+                <div class="important">
+                <div>Nome azienda: {{job.company}}</div>
+                <div>Psozione offerta: {{job.postion}}</div>
+                <div>Descrizione lavoro: {{job.description}}</div>
+                <div>Annuncio pubblicato il: {{job.created_at}}</div>
+                <div>Logo azienda: {{job.logo}}</div>
+                <div>Luogo: {{job.city}}</div>
+                <div>Tipologia contratto offerto: {{job.contract}}</div>
+                <button class="first-button" v-if="applied.includes(index + 1)" @click="applyJob(index)">Applied</button>
+                <button class="second-button" v-else @click="applyJob(index)" >Apply Now</button>
+                <div v-if="openModal" class="message">
+                    <div>Candidatura Inviata</div>
+                </div>
+            </li>
+    
+        </ul>
+
+        <h1>My apply</h1>
+        <ul class="jobs">
+                                    
+            <li  v-for='(job,index) in jobs' v-if="applied.includes(index+1)">
+                <div class="important">
+                <div>Nome azienda: {{job.company}}</div>
+                <div>Psozione offerta: {{job.postion}}</div>
+                <div>Descrizione lavoro: {{job.description}}</div>
+                <div>Annuncio pubblicato il: {{job.created_at}}</div>
+                <div>Logo azienda: {{job.logo}}</div>
+                <div>Luogo: {{job.city}}</div>
+                <div>Tipologia contratto offerto: {{job.contract}}</div>
+                <i :class='favJob(index)' @click="addFav(index)"></i>
+            </li>
+    
+        </ul>
+
+
     </div>
     
 </body>
