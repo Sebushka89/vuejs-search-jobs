@@ -13,8 +13,7 @@
     <div id="app">
         <ul class="jobs">
                                     
-            <li  v-for='job in jobs' >
-                <div>Numero annuncio {{job.id}}</div>
+            <li  v-for='(job,index) in jobs' >
                 <div>Nome azienda: {{job.company}}</div>
                 <div>Psozione offerta: {{job.postion}}</div>
                 <div>Descrizione lavoro: {{job.description}}</div>
@@ -22,8 +21,7 @@
                 <div>Logo azienda: {{job.logo}}</div>
                 <div>Luogo: {{job.city}}</div>
                 <div>Tipologia contratto offerto: {{job.contract}}</div>
-                <i class="far fa-star"></i>
-                <i class="fas fa-star"></i>
+                <i :class='favJob(index)' @click="addToFav(index)"></i>    
             </li>
     
         </ul>

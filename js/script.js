@@ -6,7 +6,8 @@ Mostriamo tutti gli annunci in una lista, con una grafica molto elementare.
 
 Milestone 2
 Identificare il preferito
-Identifichiamo nella lista gli annunci di lavoro preferiti, con un simbolo che si attiva/colora solo se quell’annuncio è tra i preferiti (per esempio, una stella).
+Identifichiamo nella lista gli annunci di lavoro preferiti, con un simbolo che si attiva/colora
+solo se quell’annuncio è tra i preferiti (per esempio, una stella).
 Aggiungere ai preferiti
 Inoltre potremo aggiungere il singolo annuncio alla lista di preferiti, inserento un altro elemento nell’html su cui fare click o sfruttando quello attuale (il simbolo del primo step, la stella), che permette al click l’aggiunta dinamica dell’annuncio alla lista dei preferiti. 
 
@@ -86,6 +87,26 @@ var app = new Vue (
             ],
             starred: [1, 2, 3],
             applied: [4, 5]
+        },
+         //se clicco sul cuore vuoto aggiungo alla lista preferiti
+        methods:{
+      
+            favJob: function(index){
+                
+               if(this.starred.includes(index +1)){
+                   return "fas fa-star"
+               } 
+               else {
+                   return "far fa-star"
+               }
+            },
+            addToFav: function(index){
+                if(!this.starred.includes(index +1)){
+                    this.starred.push(index +1)
+                    return "fas fa-star"
+                }      
+            }
+
         }
     }
 )            
