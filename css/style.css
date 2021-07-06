@@ -14,7 +14,15 @@ i{
     color: gold;
     margin-top: 10px;
 }
-button{
+.first-button{
+    padding: 10px 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 25px;
+}
+.second-button{
     padding: 10px 20px;
     margin-left: 20px;
     margin-top: 10px;

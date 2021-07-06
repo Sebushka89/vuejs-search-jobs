@@ -104,12 +104,14 @@ var app = new Vue (
                 if(!this.starred.includes(index +1)){
                     this.starred.push(index +1)
                     return "fas fa-star"
+                }else{
+                    this.starred.splice(index, 1);
                 }
             },
             applyJob: function (index){
-                this.applied.push(index+1);
-                if (this.starred.includes(index+1)){
-                    this.starred.splice(index, 1)
+                if(!this.applied.includes(index+1)) {
+                    this.applied.push(index+1);
+                    this.starred.splice(index, 1); 
                 }
             },
         }

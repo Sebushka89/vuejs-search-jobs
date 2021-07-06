@@ -22,7 +22,8 @@
                 <div>Luogo: {{job.city}}</div>
                 <div>Tipologia contratto offerto: {{job.contract}}</div>
                 <i :class='favJob(index)' @click="addFav(index)"></i>
-                <button @click="applyJob(index)">Apply Now</button>    
+                <button class="first-button" v-if="applied.includes(index + 1)" @click="applyJob(index)">Applied</button>
+                <button class="second-button" v-else @click="applyJob(index)" >Apply Now</button>
             </li>
     
         </ul>
