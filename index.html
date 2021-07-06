@@ -22,7 +22,7 @@
                 <div>Logo azienda: {{job.logo}}</div>
                 <div>Luogo: {{job.city}}</div>
                 <div>Tipologia di contratto offerto: {{job.contract}}</div>
-                <i v-if="!starred.includes(starred,job.id)" @click="addFav(starred,job.id)" class="far fa-star"></i>
+                <i v-if="!starred.includes(job.id)" @click="addFav(starred,job.id)" class="far fa-star"></i>
                 <i v-else @click="removeFav(starred,job.id)" class="fas fa-star"></i>
                 <button class="first-button" v-if="applied.includes(job.id)">Applied</button>
                 <button class="second-button" v-else @click="applyJob(applied,job.id)" >Apply Now</button>
