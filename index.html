@@ -22,10 +22,10 @@
                 <div>Logo azienda: {{job.logo}}</div>
                 <div>Luogo: {{job.city}}</div>
                 <div>Tipologia di contratto offerto: {{job.contract}}</div>
-                <i v-if="!starred.includes(index + 1)" @click="addFav(index+1)" class="far fa-star"></i>
-                <i v-else @click="removeFav(index+1)" class="fas fa-star"></i>
-                <button class="first-button" v-if="applied.includes(index + 1)" @click="applyJob(index)">Applied</button>
-                <button class="second-button" v-else @click="applyJob(index)" >Apply Now</button>
+                <i v-if="!starred.includes(starred,job.id)" @click="addFav(starred,job.id)" class="far fa-star"></i>
+                <i v-else @click="removeFav(starred,job.id)" class="fas fa-star"></i>
+                <button class="first-button" v-if="applied.includes(job.id)">Applied</button>
+                <button class="second-button" v-else @click="applyJob(applied,job.id)" >Apply Now</button>
                 <div v-if="openModal" class="message">
                     <div>Candidatura Inviata</div>
                 </div>
@@ -36,7 +36,7 @@
         <h1>My Favorite</h1>
         <ul class="jobs-2">
                                     
-            <li  v-for='(job,index) in jobs' v-if="starred.includes(index+1)">
+            <li  v-for='(job,index) in jobs' v-if="starred.includes(job.id)">
                 <div class="important">
                 <div>Nome azienda: {{job.company}}</div>
                 <div>Posizione offerta: {{job.postion}}</div>
@@ -52,7 +52,7 @@
         <h1>My apply</h1>
         <ul class="jobs-3">
                                     
-            <li  v-for='(job,index) in jobs' v-if="applied.includes(index+1)">
+            <li  v-for='(job,index) in jobs' v-if="applied.includes(job.id)">
                 <div class="important">
                 <div>Nome azienda: {{job.company}}</div>
                 <div>Posizione offerta: {{job.postion}}</div>
