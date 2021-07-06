@@ -16,13 +16,14 @@
                                     
             <li  v-for='(job,index) in jobs' >
                 <div>Nome azienda: {{job.company}}</div>
-                <div>Posizione offerta: {{job.position}}</div>
+                <div>Posizione offerta: {{job.postion}}</div>
                 <div>Descrizione lavoro: {{job.description}}</div>
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>
                 <div>Luogo: {{job.city}}</div>
                 <div>Tipologia di contratto offerto: {{job.contract}}</div>
-                <i :class='favJob(index)' @click="addFav(index)"></i>
+                <i v-if="!starred.includes(index + 1)" @click="addFav(index+1)" class="far fa-star"></i>
+                <i v-else @click="removeFav(index+1)" class="fas fa-star"></i>
                 <button class="first-button" v-if="applied.includes(index + 1)" @click="applyJob(index)">Applied</button>
                 <button class="second-button" v-else @click="applyJob(index)" >Apply Now</button>
                 <div v-if="openModal" class="message">
@@ -38,7 +39,7 @@
             <li  v-for='(job,index) in jobs' v-if="starred.includes(index+1)">
                 <div class="important">
                 <div>Nome azienda: {{job.company}}</div>
-                <div>Posizione offerta: {{job.position}}</div>
+                <div>Posizione offerta: {{job.postion}}</div>
                 <div>Descrizione lavoro: {{job.description}}</div>
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>
@@ -54,7 +55,7 @@
             <li  v-for='(job,index) in jobs' v-if="applied.includes(index+1)">
                 <div class="important">
                 <div>Nome azienda: {{job.company}}</div>
-                <div>Posizione offerta: {{job.position}}</div>
+                <div>Posizione offerta: {{job.postion}}</div>
                 <div>Descrizione lavoro: {{job.description}}</div>
                 <div>Annuncio pubblicato il: {{job.created_at}}</div>
                 <div>Logo azienda: {{job.logo}}</div>

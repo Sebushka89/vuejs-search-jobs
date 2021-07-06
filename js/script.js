@@ -91,24 +91,17 @@ var app = new Vue (
         },
          //se clicco sul cuore vuoto aggiungo alla lista preferiti
         methods:{
-      
-            favJob: function(index){
-                
-               if(this.starred.includes(index +1)){
-                   return "fas fa-star"
-               } 
-               else {
-                   return "far fa-star"
-               }
-            },
             addFav: function(index){
-                if(!this.starred.includes(index +1)){
-                    this.starred.push(index +1)
-                    return "fas fa-star"
-                }else{
-                    this.starred.splice(index, 1);
+                if (!this.starred.includes(index)) {
+                    this.starred.push(index)
                 }
             },
+            removeFav: function(id) {
+                if (this.starred.includes(id)) {
+                    let index = this.starred.indexOf(id);
+                    this.starred.splice(index,1);
+                }
+            },  
             applyJob: function (index){
                 if(!this.applied.includes(index+1)) {
                     this.applied.push(index+1);
