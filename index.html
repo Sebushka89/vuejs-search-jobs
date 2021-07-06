@@ -10,6 +10,25 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <div id="app">
+        <ul class="jobs">
+                                    
+            <li  v-for='job in jobs' >
+                <div>Numero annuncio {{job.id}}</div>
+                <div>Nome azienda: {{job.company}}</div>
+                <div>Psozione offerta: {{job.postion}}</div>
+                <div>Descrizione lavoro: {{job.description}}</div>
+                <div>Annuncio pubblicato il: {{job.created_at}}</div>
+                <div>Logo azienda: {{job.logo}}</div>
+                <div>Luogo: {{job.city}}</div>
+                <div>Tipologia contratto offerto: {{job.contract}}</div>
+                <i class="far fa-star"></i>
+                <i class="fas fa-star"></i>
+            </li>
+    
+        </ul>
+    </div>
     
 </body>
+<script src="js/script.js"></script>
 </html>
