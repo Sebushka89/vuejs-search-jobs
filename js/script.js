@@ -100,13 +100,17 @@ var app = new Vue (
                    return "far fa-star"
                }
             },
-            addToFav: function(index){
+            addFav: function(index){
                 if(!this.starred.includes(index +1)){
                     this.starred.push(index +1)
                     return "fas fa-star"
-                }      
-            }
-
+                }else{
+                    this.starred.splice(index, 1)
+                }    
+            },
+            applyJob: function (index){
+               
+           }
         }
     }
 )            

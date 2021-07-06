@@ -21,7 +21,8 @@
                 <div>Logo azienda: {{job.logo}}</div>
                 <div>Luogo: {{job.city}}</div>
                 <div>Tipologia contratto offerto: {{job.contract}}</div>
-                <i :class='favJob(index)' @click="addToFav(index)"></i>    
+                <i :class='favJob(index)' @click="addFav(index)"></i>
+                <button @click="applyJob(index)">Apply Now</button>    
             </li>
     
         </ul>
